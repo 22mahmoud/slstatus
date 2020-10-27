@@ -1,0 +1,6 @@
+*.o
+*.bak
+*.rej
+*.orig
+
+slstatus
