@@ -1,13 +1,27 @@
-/* See LICENSE file for copyright and license details. */
-
 /* interval between updates (in ms) */
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = " ";
 
 /* maximum output string length */
 #define MAXLEN 2048
+
+static const struct arg args[] = {
+	/* function         format            argument                               */
+  { run_command,      "  %s | ",       "curl -s 'wttr.in/alexandria?format=%t&lang=en'"},
+  { num_files,        " %s | ",        "/home/ashraf/Mail/mailbox/INBOX/new"  },
+  { keymap,           " %s | ",        NULL                                   },
+  { run_command,      ": %s | ",       "amixer get Master | awk -F'[][]' '/%/ { print $2 }' | head -n1"},
+  { disk_free,        "[ %s] ",        "/"                                    },
+  { battery_perc,     "[ %s] ",        "BAT0"                                 },
+  { cpu_perc,         "[ %s%%] ",      NULL	                                 },
+  { ram_perc,         "[ %s%%] ",      NULL	                                 },
+  { temp,             "[ %s] ",        "/sys/class/thermal/thermal_zone0/temp"},
+  { datetime,         "|  %s | ",      "%a, %b %d"                            },
+  { datetime,         " %s ",          "%I:%M %p"                             },
+};
+
 
 /*
  * function            description                     argument (example)
@@ -62,12 +76,4 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 
-static const struct arg args[] = {
-	/* function format          argument */
-  { keymap,           "   %s ",        NULL },
-  { run_command,      ": %s | ",      "amixer get Master | awk -F'[][]' '/%/ { print $2 }' | head -n1"  },
-	{ battery_perc,     "[ %s] ",        "BAT0" },
-	{ cpu_perc,         "[ %s%%] ",      NULL	      },
-	{ ram_perc,         "[ %s%%] ",      NULL	      },
-	{ datetime,         "%s ",            "%a %b %d %r" },
-};
+
