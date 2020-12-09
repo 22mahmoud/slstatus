@@ -9,15 +9,15 @@ static const char unknown_str[] = " ";
 
 static const struct arg args[] = {
 	/* function         format            argument                               */
-  { run_command,      "  %s | ",       "curl -s 'wttr.in/alexandria?format=%t&lang=en'"},
-  { num_files,        " %s | ",        "/home/ashraf/Mail/mailbox/INBOX/new"  },
-  { keymap,           " %s | ",        NULL                                   },
-  { run_command,      ": %s | ",       "amixer get Master | awk -F'[][]' '/%/ { print $2 }' | head -n1"},
-  { disk_free,        "[ %s] ",        "/"                                    },
-  { battery_perc,     "[ %s] ",        "BAT0"                                 },
+  // { run_command,      "  %s | ",       "curl -s 'wttr.in/alexandria?format=%t&lang=en'"},
+  { num_files,        "  %s | ",        "/home/ashraf/Mail/mailbox/INBOX/new"  },
+  // { keymap,           " %s | ",        NULL                                   },
+  // { run_command,      ": %s | ",       "amixer get Master | awk -F'[][]' '/%/ { print $2 }' | head -n1"},
+  // { disk_free,        "[ %s] ",        "/"                                    },
+  // { battery_perc,     "[ %s] ",        "BAT0"                                 },
   { cpu_perc,         "[ %s%%] ",      NULL	                                 },
   { ram_perc,         "[ %s%%] ",      NULL	                                 },
-  { temp,             "[ %s] ",        "/sys/class/thermal/thermal_zone0/temp"},
+  // { temp,             "[ %s] ",        "/sys/class/thermal/thermal_zone0/temp"},
   { datetime,         "|  %s | ",      "%a, %b %d"                            },
   { datetime,         " %s ",          "%I:%M %p"                             },
 };
