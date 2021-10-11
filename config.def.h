@@ -9,6 +9,25 @@ static const char unknown_str[] = "n/a";
 /* maximum output string length */
 #define MAXLEN 2048
 
+// const char *share_dir = getenv("XDG_DATA_HOME");
+
+static const struct arg args[] = {
+	/* function format          argument */
+        { num_files,  " %s", "/home/ashraf/.local/share/mail/personal/INBOX/new"},
+
+	{ separator,	 " | ",              NULL           },
+
+	{ run_command, ": %4s", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+
+	{ separator,	 " | ",              NULL           },
+	{ cpu_perc, "[CPU %s%%]", NULL	      },
+	{ separator,	 " - ",              NULL           },
+	{ ram_perc, "[RAM %s%%]", NULL	      },
+	{ separator,	 " | ",              NULL           },
+
+	{ datetime, "%s",           "%A, %b %d - %I:%M %p" },
+};
+
 /*
  * function            description                     argument (example)
  *
@@ -63,7 +82,3 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
-static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
-};
