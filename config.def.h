@@ -17,7 +17,7 @@ static const struct arg args[] = {
 
 	{ separator,	 " | ",              NULL           },
 
-	{ run_command, ": %4s", "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	{ run_command, ": %3s", "amixer sget Master | awk -F'[][]' '/Left:/ { print $2 }'" },
 
 	{ separator,	 " | ",              NULL           },
 	{ cpu_perc, "[CPU %s%%]", NULL	      },
