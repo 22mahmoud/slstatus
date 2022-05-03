@@ -13,7 +13,9 @@ static const char unknown_str[] = "n/a";
 
 static const struct arg args[] = {
 	/* function format          argument */
-        { num_files,  " %s", "/home/ashraf/.local/share/mail/personal/INBOX/new"},
+	{ separator,	 " ",              NULL           },
+
+  { num_files,  " %s", "/home/ashraf/.local/share/mail/personal/INBOX/new"},
 
 	{ separator,	 " | ",              NULL           },
 
@@ -26,6 +28,8 @@ static const struct arg args[] = {
 	{ separator,	 " | ",              NULL           },
 
 	{ datetime, "%s",           "%A, %b %d - %I:%M %p" },
+
+	{ separator,	 " ",              NULL           },
 };
 
 /*
