@@ -22,6 +22,8 @@ static const struct arg args[] = {
 	{ run_command, ": %2s", "pamixer --get-volume" },
 
 	{ separator,	 " | ",              NULL           },
+	{ disk_free, "[DISK %s]",     "/home"	      },
+	{ separator,	 " - ",              NULL           },
 	{ cpu_perc, "[CPU %s%%]", NULL	      },
 	{ separator,	 " - ",              NULL           },
 	{ ram_perc, "[RAM %s%%]", NULL	      },
