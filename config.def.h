@@ -19,12 +19,12 @@ static const struct arg args[] = {
 	{ separator,	  "^C8^  ~ ",                         NULL           },
 	{ ram_perc,     "^C2^[RAM %s%%] ^B0^ ",             NULL	      },
 
-	{ num_files,    "^B3^^C0^  ^B0^^C3^ %s ",          "/home/ashraf/.local/share/mail/personal/INBOX/new" },
+	{ num_files,    " ^B3^^C0^  ^B0^^C3^ %s ",          "/home/ashraf/.local/share/mail/personal/INBOX/new" },
 
-	{ run_command,  "^B6^^C0^  ^B0^^C6^ %2s ",         "pamixer --get-volume" },
+	{ run_command,  " ^B6^^C0^  ^B0^^C6^ %2s ",         "pamixer --get-volume" },
 
-  { datetime,     "^B4^^C0^  ^B0^^C4^ %s ",          "%A, %b %d"},
-  { datetime,     "^B2^^C0^  ^B0^^C2^ %s ",          "%I:%M %p"},
+  { datetime,     " ^B4^^C0^  ^B0^^C4^ %s ",          "%A, %b %d"},
+  { datetime,     " ^B2^^C0^  ^B0^^C2^ %s ",          "%I:%M %p"},
 };
 
 /*
