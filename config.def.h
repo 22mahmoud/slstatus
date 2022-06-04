@@ -15,21 +15,19 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ separator,	 " ",              NULL           },
 
-  { num_files,  " %s", "/home/ashraf/.local/share/mail/personal/INBOX/new"},
+	{ num_files,  "^C1^ %s", "/home/ashraf/.local/share/mail/personal/INBOX/new" },
 
-	{ separator,	 " | ",              NULL           },
+	{ separator,	 "^C8^ | ",              NULL           },
+	{ run_command, "^C2^ %2s", "pamixer --get-volume" },
 
-	{ run_command, ": %2s", "pamixer --get-volume" },
-
-	{ separator,	 " | ",              NULL           },
-	{ disk_free, "[DISK %s]",     "/home"	      },
+	{ separator,	 "^C8^ | ",              NULL           },
+	{ disk_free, "^C3^[DISK %s]",     "/home"	      },
 	{ separator,	 " - ",              NULL           },
-	{ cpu_perc, "[CPU %s%%]", NULL	      },
+	{ cpu_perc, "^C4^[CPU %s%%]", NULL	      },
 	{ separator,	 " - ",              NULL           },
-	{ ram_perc, "[RAM %s%%]", NULL	      },
-	{ separator,	 " | ",              NULL           },
-
-	{ datetime, "%s",           "%A, %b %d - %I:%M %p" },
+	{ ram_perc, "^C5^[RAM %s%%]", NULL	      },
+	{ separator,	 "^C8^ | ",              NULL           },
+	{ datetime, "^C6^%s",           "%A, %b %d - %I:%M %p" },
 
 	{ separator,	 " ",              NULL           },
 };
