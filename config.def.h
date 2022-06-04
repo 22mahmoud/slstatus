@@ -12,24 +12,19 @@ static const char unknown_str[] = "n/a";
 // const char *share_dir = getenv("XDG_DATA_HOME");
 
 static const struct arg args[] = {
-	/* function format          argument */
-	{ separator,	 " ",              NULL           },
+	/*function      format                              argument */
+	{ disk_free,    "^C2^ [DISK %s]",                   "/home"	      },
+	{ separator,	  "^C8^  ~ ",                         NULL           },
+	{ cpu_perc,     "^C2^[CPU %s%%]",                   NULL	      },
+	{ separator,	  "^C8^  ~ ",                         NULL           },
+	{ ram_perc,     "^C2^[RAM %s%%] ^B0^ ",             NULL	      },
 
-	{ num_files,  "^C1^ %s", "/home/ashraf/.local/share/mail/personal/INBOX/new" },
+	{ num_files,    "^B3^^C0^  ^B0^^C3^ %s ",          "/home/ashraf/.local/share/mail/personal/INBOX/new" },
 
-	{ separator,	 "^C8^ | ",              NULL           },
-	{ run_command, "^C2^ %2s", "pamixer --get-volume" },
+	{ run_command,  "^B6^^C0^  ^B0^^C6^ %2s ",         "pamixer --get-volume" },
 
-	{ separator,	 "^C8^ | ",              NULL           },
-	{ disk_free, "^C3^[DISK %s]",     "/home"	      },
-	{ separator,	 " - ",              NULL           },
-	{ cpu_perc, "^C4^[CPU %s%%]", NULL	      },
-	{ separator,	 " - ",              NULL           },
-	{ ram_perc, "^C5^[RAM %s%%]", NULL	      },
-	{ separator,	 "^C8^ | ",              NULL           },
-	{ datetime, "^C6^%s",           "%A, %b %d - %I:%M %p" },
-
-	{ separator,	 " ",              NULL           },
+  { datetime,     "^B4^^C0^  ^B0^^C4^ %s ",          "%A, %b %d"},
+  { datetime,     "^B2^^C0^  ^B0^^C2^ %s ",          "%I:%M %p"},
 };
 
 /*
