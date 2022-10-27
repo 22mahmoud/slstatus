@@ -6,6 +6,7 @@
 #include <X11/Xlib.h>
 
 #include "../util.h"
+#include "../slstatus.h"
 
 static int
 valid_layout_or_variant(char *sym)
@@ -46,7 +47,7 @@ get_layout(char *syms, int grp_num)
 }
 
 const char *
-keymap(void)
+keymap(const char *unused)
 {
 	Display *dpy;
 	XkbDescRec *desc;

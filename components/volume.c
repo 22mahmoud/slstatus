@@ -6,8 +6,9 @@
 #include <unistd.h>
 
 #include "../util.h"
+#include "../slstatus.h"
 
-#if defined(__OpenBSD__)
+#if defined(__OpenBSD__) | defined(__FreeBSD__)
 	#include <sys/queue.h>
 	#include <poll.h>
 	#include <sndio.h>
@@ -161,6 +162,7 @@
 				if (sioctl_revents(hdl, pfds) & POLLHUP) {
 					warn("sndio: disconnected");
 					cleanup();
+					initialized = 0;
 					return NULL;
 				}
 			}

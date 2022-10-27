@@ -5,15 +5,16 @@
 #include <unistd.h>
 
 #include "../util.h"
+#include "../slstatus.h"
 
 const char *
-gid(void)
+gid(const char *unused)
 {
 	return bprintf("%d", getgid());
 }
 
 const char *
-username(void)
+username(const char *unused)
 {
 	struct passwd *pw;
 
@@ -26,7 +27,7 @@ username(void)
 }
 
 const char *
-uid(void)
+uid(const char *unused)
 {
 	return bprintf("%d", geteuid());
 }

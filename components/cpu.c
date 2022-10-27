@@ -4,10 +4,11 @@
 #include <string.h>
 
 #include "../util.h"
+#include "../slstatus.h"
 
 #if defined(__linux__)
 	const char *
-	cpu_freq(void)
+	cpu_freq(const char *unused)
 	{
 		uintmax_t freq;
 
@@ -21,7 +22,7 @@
 	}
 
 	const char *
-	cpu_perc(void)
+	cpu_perc(const char *unused)
 	{
 		static long double a[7];
 		long double b[7], sum;
@@ -54,7 +55,7 @@
 	#include <sys/sysctl.h>
 
 	const char *
-	cpu_freq(void)
+	cpu_freq(const char *unused)
 	{
 		int freq, mib[2];
 		size_t size;
@@ -74,7 +75,7 @@
 	}
 
 	const char *
-	cpu_perc(void)
+	cpu_perc(const char *unused)
 	{
 		int mib[2];
 		static uintmax_t a[CPUSTATES];
@@ -114,7 +115,7 @@
 	#include <devstat.h>
 
 	const char *
-	cpu_freq(void)
+	cpu_freq(const char *unused)
 	{
 		int freq;
 		size_t size;
@@ -131,7 +132,7 @@
 	}
 
 	const char *
-	cpu_perc(void)
+	cpu_perc(const char *unused)
 	{
 		size_t size;
 		static long a[CPUSTATES];
