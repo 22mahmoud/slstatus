@@ -14,9 +14,9 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/*function      format                              argument */
 	{ disk_free,    "^C2^ [DISK %s]",                   "/home"	      },
-	{ separator,	  "^C8^  ~ ",                         NULL           },
+	{ run_command,	  "%s ",                               "echo \"^C8^  ~\""    },
 	{ cpu_perc,     "^C2^[CPU %s%%]",                   NULL	      },
-	{ separator,	  "^C8^  ~ ",                         NULL           },
+	{ run_command,	  "%s ",                               "echo \"^C8^  ~\""    },
 	{ ram_perc,     "^C2^[RAM %s%%] ^B0^ ",             NULL	      },
 
 	{ num_files,    " ^B3^^C0^  ^B0^^C3^ %s ",          "/home/ashraf/.local/share/mail/personal/INBOX/new" },
@@ -63,7 +63,6 @@ static const struct arg args[] = {
  * ram_total           total memory size in GB         NULL
  * ram_used            used memory in GB               NULL
  * run_command         custom shell command            command (echo foo)
- * separator           string to echo                  NULL
  * swap_free           free swap in GB                 NULL
  * swap_perc           swap usage in percent           NULL
  * swap_total          total swap size in GB           NULL
